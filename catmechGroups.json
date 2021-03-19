@@ -1,0 +1,298 @@
+{
+    "War-cat": {
+        "isCat" : true,
+        "label": "War",
+        "list":["American Civil War", "American Indian Wars", "American Revolutionary War", "Civil War", "Korean War", "Modern Warfare", "Napoleonic", "Pike and Shot", "Post-Napoleonic", "Vietnam War", "Wargame", "World War I", "World War II"]
+    },
+    "History-cat" : {
+        "isCat" : true,
+        "label": "History",
+        "list": ["Age of Reason", "Ancient", "Medieval", "Prehistoric", "Renaissance"]
+    },
+    "General-theme-cat" : {
+        "isCat" : true,
+        "label": "General theme",
+        "list": ["Abstract Strategy", "American West", "Arabian", "Comic Book / Strip", "Fantasy", "Horror", "Movies / TV / Radio theme", "Murder/Mystery", "Music", "Mythology", "Novel-based", "Religious", "Science Fiction", "Sports", "Video Game Theme"]
+    },
+    "Specific-theme-cat" : {
+        "isCat" : true,
+        "label": "Specific theme",
+        "list" :["Adventure", "Animals", "Aviation / Flight", "Environmental", "Exploration", "Farming", "Fighting", "Mafia", "Medical", "Nautical", "Pirates", "Space Exploration", "Trains", "Transportation", "Travel", "Zombies"]
+    },
+    "Hidden-information-cat" : {
+        "isCat" : true,
+        "label": "Hidden Information",
+        "list" :["Bluffing", "Deduction", "Spies/Secret Agents"]
+    },
+    "Management-cat" : {
+        "isCat" : true,
+        "label" : "Management",
+        "list" : ["City Building", "Civilization", "Economic", "Industry / Manufacturing", "Negotiation", "Political", "Territory Building"]
+    },
+    "Specific-Gametype-cat" : {
+        "isCat" : true,
+        "label" : "Specific Gametype",
+        "list" : ["Action / Dexterity", "Card Game", "Children's Game", "Educational", "Expansion for Base-game", "Mature / Adult", "Party Game", "Puzzle", "Trivia", "Word Game"]
+    },
+    "Game-component-cat" : {
+        "isCat" : true,
+        "label" : "Game Components",
+        "list" : ["Book", "Collectible Components", "Dice", "Electronic", "Miniatures", "Print & Play"]
+    },
+    "Other-cat" : {
+        "isCat" : true,
+        "label" : "Other",
+        "list" : ["Game System", "Humor", "Math", "Maze", "Memory", "Number", "Racing", "Real-time"]
+    },
+    "Economical-Mech" : {
+      "isCat" : false,
+      "label" : "Economics",
+      "list" : ["Auction/Bidding",
+                "Auction: Dexterity",
+                "Auction: Dutch",
+                "Auction: Dutch Priority",
+                "Auction: English",
+                "Auction: Fixed Placement",
+                "Auction: Once Around",
+                "Auction: Sealed Bid",
+                "Auction: Turn Order Until Pass",
+                "Bribery",
+                "Closed Economy Auction",
+                "Commodity Speculation",
+                "Constrained Bidding",
+                "Delayed Purchase",
+                "Income",
+                "Investment",
+                "Loans",
+                "Market", 
+                "Multiple-Lot Auction",
+                "Ownership",
+                "Stock Holding",
+                "Trading"]
+    },
+    "Social-Mech" : {
+      "isCat" : false,
+      "label" : "Social",
+      "list" : ["Acting",
+                "Alliances",
+                "Betting and Bluffing",
+                "Communication Limits",
+                "Deduction",
+                "Drafting",
+                "Hidden Roles",
+                "Induction",
+                "Negotiation",
+                "Player Judge",
+                "Prisoner's Dilemma",
+                "Roles with Asymmetric Information",
+                "Targeted Clues",
+                "Traitor Game",
+                "Voting"
+                ]
+    },
+    "Dice-Mech" : {
+      "isCat" : false,
+      "label" : "Dice",
+      "list" : ["Critical Hits and Failures",
+                "Dice Rolling",
+                "Die Icon Resolution",
+                "Different Dice Movement",
+                "Re-rolling and Locking",
+                "Roll / Spin and Move",
+                "Stat Check Resolution",
+                "Worker Placement with Dice Workers"
+                ]
+    },
+    "Card-Mech" : {
+      "isCat" : false,
+      "label" : "Card",
+      "list" : ["Card Drafting",
+                "Card Play Conflict Resolution",
+                "Command Cards",
+                "Deck Construction",
+                "Deck, Bag, and Pool Building",
+                "Hand Management",
+                "Ladder Climbing",
+                "Melding and Splaying",
+                "Move Through Deck",
+                "Trick-taking"
+                ]
+    },
+    "Actions-Mech" : {
+        "isCat" : false,
+        "label" : "Actions",
+        "list" : ["Action Drafting",
+                  "Action Points",
+                  "Action Queue",
+                  "Action Retrieval",
+                  "Action Timer",
+                  "Action/Event",
+                  "Advantage Token",
+                  "Follow",
+                  "Matching",
+                  "Once-Per-Game Abilities",
+                  "Order Counters",
+                  "Rondel",
+                  "Simultaneous Action Selection",
+                  "Worker Placement",
+                  "Worker Placement, Different Worker Types"
+                  ]
+    },
+    "Board-Movement-Mech" : {
+      "isCat" : false,
+      "label" : "Board Movement",
+      "list" : ["Area Movement",
+                "Grid Movement",
+                "Hidden Movement",
+                "Impulse Movement",
+                "Movement Points",
+                "Movement Template",
+                "Moving Multiple Units",
+                "Pattern Movement",
+                "Point to Point Movement",
+                "Programmed Movement",
+                "Relative Movement",
+                "Three Dimensional Movement",
+                "Track Movement"
+                ]
+    },
+    "Board-Mech" : {
+      "isCat" : false,
+      "label" : "Board",
+      "list" : ["Area Majority / Influence",
+                "Bias",
+                "Bingo",
+                "Chaining",
+                "Connections",
+                "Crayon Rail System",
+                "Enclosure",
+                "Grid Coverage",
+                "Hexagon Grid",
+                "Line of Sight",
+                "Map Addition",
+                "Map Deformation",
+                "Map Reduction",
+                "Minimap Resolution",
+                "Modular Board",
+                "Multiple Maps",
+                "Network and Route Building",
+                "Pattern Building",
+                "Square Grid",
+                "Tile Placement",
+                "Variable Set-up"
+              ]
+    },
+    "General-Mech" : {
+      "isCat" : false,
+      "label" : "General",
+      "list" : ["Catch the Leader",
+                "Contracts",
+                "Cube Tower",
+                "Events",
+                "Force Commitment",
+                "Hot Potato",
+                "I Cut, You Choose",
+                "Kill Steal",
+                "King of the Hill",
+                "Layering",
+                "Line Drawing",
+                "Mancala",
+                "Memory",
+                "Pattern Recognition",
+                "Pick-up and Deliver",
+                "Player Elimination",
+                "Push Your Luck",
+                "Rock-Paper-Scissors",
+                "Secret Unit Deployment",
+                "Static Capture",
+                "Take That",
+                "Tech Trees / Tech Tracks",
+                "Tug of War",
+                "Variable Player Powers"
+                ]
+    },
+    "Wargame-Mech" : {
+      "isCat" : false,
+      "label" : "Wargame",
+      "list" : ["Campaign / Battle Card Driven"
+                ,"Chit-Pull System"
+                ,"Measurement Movement"
+                ,"Ratio / Combat Results Table"
+                ,"Zone of Control"
+                ]
+    },"Turn-Order-Mech" : {
+      "isCat" : false,
+      "label" : "Turn Order",
+      "list" : ["Area-Impulse"
+                ,"Interrupts"
+                ,"Lose a Turn"
+                ,"Passed Action Token"
+                ,"Real-Time"
+                ,"Selection Order Bid"
+                ,"Time Track"
+                ,"Turn Order: Auction"
+                ,"Turn Order: Claim Action"
+                ,"Turn Order: Pass Order"
+                ,"Turn Order: Progressive"
+                ,"Turn Order: Random"
+                ,"Turn Order: Role Order"
+                ,"Turn Order: Stat-Based"
+                ,"Variable Phase Order"
+                ]
+    },
+    "Resources-Mech" : {
+      "isCat" : false,
+      "label" : "Resources",
+      "list" : ["Automatic Resource Growth"
+                ,"Increase Value of Unchosen Resources"
+                ,"Random Production"
+                ,"Set Collection"
+                ,"Victory Points as a Resource"
+                ,"Resource to Move"
+                ]
+    },
+    "Scoring-and-Endings-Mech" : {
+      "isCat" : false,
+      "label" : "Scoring and Endings",
+      "list" : ["Elapsed Real Time Ending"
+                ,"End Game Bonuses"
+                ,"Finale Ending"
+                ,"Hidden Victory Points"
+                ,"Highest-Lowest Scoring"
+                ,"Predictive Bid"
+                ,"Score-and-Reset Game"
+                ,"Single Loser Game"
+                ,"Sudden Death Ending"
+                ]
+    },
+    "Dexterity" : {
+      "isCat" : false,
+      "label" : "Dexterity",
+      "list" : ["Flicking"
+                ,"Physical Removal"
+                ,"Singing"
+                ,"Slide/Push"
+                ,"Speed Matching"
+                ,"Stacking and Balancing"
+                ]
+    },
+    "Game-type-Mech" : {
+      "isCat" : false,
+      "label" : "Game type",
+      "list" : ["Cooperative Game"
+                ,"Legacy Game"
+                ,"Narrative Choice / Paragraph"
+                ,"Paper-and-Pencil"
+                ,"Pieces as Map"
+                ,"Race"
+                ,"Role Playing"
+                ,"Scenario / Mission / Campaign Game"
+                ,"Semi-Cooperative Game"
+                ,"Simulation"
+                ,"Solo / Solitaire Game"
+                ,"Storytelling"
+                ,"Team-Based Game"
+                ]
+    }
+
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title>Board Game Wizard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script src="javaScripts/scatterplot.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+    </head>
+
+    <body onload="displayPage()">
+
+        <header>
+            <div class="headerTitle">Board Game Wizard</div>
+            <img src="favicon.ico"  height="56px" width="56px" style="margin-left: 4px;">
+
+            <div class="headerLinks">
+
+                <a href="about.html" class="menuLink">About</a>
+                <a href="index.html" class="menuLink">Visualisation</a>
+            </div>
+        </header>
+
+        <div id="the-loading-screen" class="loading-screen">
+            <img class="loading-img" src="favicon.ico">
+            <div class="loading-text">Loading</div>
+        </div>
+
+        <div id="div-all-items" class="all-items" style="display: none;">
+
+        <main>
+
+            <div class="main-upper-view">
+
+                <div id="color-legend-container">
+                    <h2 id="legendLabel">Gametype Legend</h2>
+                    <p style="font-size:11px">Click the colored circles below to show/hide specific types.</p>
+                    <div id="color-legend"></div>
+                    <button class="btn-color-legend" id="btnClearAllType">Hide all</button><br>
+                    <button class="btn-color-legend" id="btnMarkAllType">Show all</button><br>
+                    <button class="btn-color-legend" id="btnResetZoom">Reset View</button>
+
+                    <div id="axis-change-container">
+                        <div class="axis-selection" style="display: flex; flex-direction: row;">
+                            <div>
+                                <label for="XAxisSelection">X-Axis</label>
+                                <select class="select-element" id="XAxisSelection"></select>
+                            </div>
+                                <div style="margin-top: 5px; margin-left: 3px;">
+                                    <div style="display: flex; flex-direction: row; margin-left: 20px;">
+                                        <p style="margin-bottom: 0px; margin-top: 2px; margin-right: 5px; font-size: small;">Range</p>
+                                        <div class="tooltip-rating" class="infoIcon" style="font-weight: bold;">&#9432;
+                                            <span class="tooltip-rating-text tooltip-slider">Here you can specify the min and max for the x-axis</span>
+                                        </div>
+
+                                    </div>
+
+                                    <div style="display: flex; flex-direction: row; justify-content: center;">
+                                        <input type="text" id="x-min" class="axis-min-max">
+                                        <p style="margin-top:0px; margin-bottom: 0px; margin-left: 2px; margin-right: 2px;">-</p>
+                                        <input type="text" id="x-max" class="axis-min-max">
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="axis-selection" style="display: flex; flex-direction: row;">
+                            <div>
+                                <label for="YAxisSelection">Y-Axis</label>
+                                <select class="select-element" id="YAxisSelection"></select>
+                            </div>
+                            <div style="margin-top: 5px; margin-left: 3px;">
+                                <div style="display: flex; flex-direction: row; margin-left: 20px;">
+                                    <p style="margin-bottom: 0px; margin-top: 2px; margin-right: 5px; font-size: small;">Range</p>
+                                    <div class="tooltip-rating" class="infoIcon" style="font-weight: bold;">&#9432;
+                                        <span class="tooltip-rating-text tooltip-slider">Here you can specify the min and max for the y-axis</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; flex-direction: row; justify-content: center;">
+                                    <input type="text" id="y-min" class="axis-min-max">
+                                    <p style="margin-top:0px; margin-bottom: 0px; margin-left: 2px; margin-right: 2px;">-</p>
+                                    <input type="text" id="y-max" class="axis-min-max">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="search-filter">
+                        <label for="search-input">Filter by Name</label><br>
+                        <input type="text" id="search-input">
+                    </div>
+                </div>
+
+                <div id="main-scatterplot"></div>
+
+                <div id="info-div" class="infoDiv"><h2 id="info-title"></h2><p id="info-information"></p></div>
+                <div id="info-about-boardgame" class="infoAboutBoardgame" style="display: none;">
+
+                    <div id="cross-display" class="cross-topcorner">&#x2716;</div>
+                    <div id="title-boardgame" class="boardgameName"></div>
+
+                    <div class="div-complexity-rating-rank-container">
+
+                        <div class="div-crr">
+                            <div class="div-crr-title">Complexity</div>
+                            <div id="complexity-display" class="div-crr-display"></div>
+                        </div>
+
+                    <div class="div-crr">
+                        <div class="div-crr-title">Rating
+                            <div class="tooltip-rating" class="infoIcon">&#9432;
+                                <span id="num-of-rating-display" class="tooltip-rating-text tooltip-detail"></span>
+                            </div>
+                        </div>
+
+                        <div id="rating-display" class="div-crr-display"></div>
+                    </div>
+
+                    <div class="div-crr">
+                        <div class="div-crr-title">Rank overall</div>
+                        <div id="rank-display" class="div-crr-display"></div>
+                    </div>
+                    </div>
+
+                    <div class="div-boardgameinfo-container">
+                        <div class="div-boardgameinfo">
+                            <div class="boardgameinfo-title">Players</div>
+                            <div id="players-display" class="boardgameinfo-display"></div>
+                        </div>
+
+                    <div class="div-boardgameinfo">
+                        <div class="boardgameinfo-title">Playtime</div>
+                        <div id="playtime-display" class="boardgameinfo-display"></div>
+                    </div>
+
+                    <div class="div-boardgameinfo">
+                        <div class="boardgameinfo-title">Player Age</div>
+                        <div id="age-display" class="boardgameinfo-display"></div>
+                    </div>
+
+                    </div>
+
+                    <div class="gamed-and-img">
+                        <div class="infoGamedesigner">
+                            <div class="boardgameinfo-title">Game designer(s)</div>
+                            <div id="gameDesigner-display" class="boardgameinfo-display"></div>
+
+                        </div>
+
+                    <img id="image-display" class="boardGameImg">
+                    </div>
+
+                    <div class="info-types">
+                            <div class="boardgameinfo-title">Game type</div>
+                            <div id="type-display" class="boardgameinfo-display"></div>
+                    </div>
+
+                    <div class="info-cat">
+                            <div class="boardgameinfo-title">Categories
+                                <div class="tooltip-rating" class="infoIcon">&#9432;
+                                    <span class="tooltip-rating-text tooltip-detail">Click the Categories to filter on them</span>
+                                </div>
+
+                            </div>
+                            <div id="cat-display" class="boardgameinfo-display"></div>
+                    </div>
+
+                    <div class="info-cat">
+                            <div class="boardgameinfo-title">Mechanics
+                                <div class="tooltip-rating" class="infoIcon">&#9432;
+                                    <span class="tooltip-rating-text tooltip-detail">Click the Mechanics to filter on them</span>
+                                </div>
+                            </div>
+                            <div id="mech-display" class="boardgameinfo-display"></div>
+                    </div>
+
+                    <div id="link-display" class="link-to-bgg"></div>
+
+                </div>
+
+                <div id="prev-game-container">
+                    <h2 id="prevGameLabel">Game History</h2>
+                    <div id="previous-game-list"></div>
+                </div>
+
+
+            </div>
+
+            <div id="num-of-games-games"><p id="current-games-displayed"></p></div>
+
+            <! --- Filtering 1 goes here (players / playtime / age / num of ratings) --- >
+            <div class="filtering-1">
+                <div class="slider-filter-container">
+                    <label for="numberOfPlayers-rangeslider" class="numberOfPlayers-rangeslider-lable">Number of players
+                        <div class="tooltip-rating" class="infoIcon" style="font-weight:bold">&#9432;
+                            <span class="tooltip-rating-text tooltip-slider" >Filter games based on how many players can play</span>
+                        </div>
+                    </label>
+                    <div class="range-slider-filter" id="numberOfPlayers-rangeslider"></div>
+                </div>
+
+                <div class="slider-filter-container">
+                    <label for="playTime-rangeslider" class="playTime-rangeslider-lable">Playtime (minutes)
+                        <div class="tooltip-rating" class="infoIcon" style="font-weight:bold">&#9432;
+                            <span class="tooltip-rating-text tooltip-slider">Filter games based on how long it takes to play</span>
+                        </div>
+                    </label>
+                    <div class="range-slider-filter" id="playTime-rangeslider"></div>
+                </div>
+
+                <div class="slider-filter-container">
+                    <label for="age-rangeslider" class="age-rangeslider-lable">Player Age (years)
+                        <div class="tooltip-rating" class="infoIcon" style="font-weight:bold">&#9432;
+                            <span class="tooltip-rating-text tooltip-slider" >Filter games based on age requirement for the game</span>
+                            </div>
+                    </label>
+                    <div class="range-slider-filter" id="age-rangeslider"></div>
+                </div>
+
+                <div class="slider-filter-container">
+                    <label for="num-of-ratings-rangeslider" class="num-of-ratings-rangeslider-lable">Number of ratings
+                        <div class="tooltip-rating" class="infoIcon" style="font-weight:bold">&#9432;
+                            <span class="tooltip-rating-text tooltip-slider" >Filter games based on the number of ratings the game has</span>
+                            </div>
+                    </label>
+                    <div class="range-slider-filter" id="num-of-ratings-rangeslider"></div>
+                </div>
+            </div>
+
+            <! --- Filtering 2 goes here (categories and mechanics) --->
+            <div class="filtering-2">
+                <div class="filtering-header">
+                    <div id="selection">
+
+                        <h3 style="margin-top: 0px; margin-bottom: 2px; font-size: large;">Category &amp; Mechanic Filtering</h3>
+                        <label id="cat-mech-Title" style="padding-right: 5px; float: left;">Right now viewing: <b style="color: greenyellow;">Categories</b></label>
+                        <button class="cat-mech-menu-button" id="selectCatMechButton" onclick="showCategories()" style="width: 130px; float: left; margin-left: 5px;">Show Mechanics</button>
+                        <button class="cat-mech-menu-button" id="clearCatMechButton" style="width: 130px; float: left; margin-left: 10px;">Clear Selections</button>
+                        <div class="legend">
+                            <div class="legend_text"><div class='box white'></div>No rule</div>
+                            <div class="legend_text"><div class='box green'></div>At least one included</div>
+                            <div class="legend_text"><div class='box blue'></div>Must be included</div>
+                            <div class="legend_text"><div class='box red'></div> Not shown</div>
+                        </div>
+                        <div class="tooltip-rating" class="infoIcon" style="margin-left: 5px; font-weight: bold;">&#9432;
+                            <span class="tooltip-rating-text tooltip-catmech">Click a group to reveal the Categories/Mechanics you can filter on.<br><br>You can click the Categories and Mechanics buttons in each group several times to change the rule for that Category/Mechanic</span>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="display-cat-mech" id="Categories"></div>
+                <div class="display-cat-mech" id="Mechanics" style="display: none;"></div>
+            </div>
+        </main>
+
+				<footer>Data fetched 2021-03-18 from: <a class="footer-link" href="https://boardgamegeek.com/">Boardgamegeek.com</a></footer>
+    </div>
+
+    </body>
+</html>
