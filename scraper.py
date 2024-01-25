@@ -1,10 +1,13 @@
 import requests
 import xml.etree.ElementTree as ET
+import os.path
 
+start = 1
 
-ids = list(range(1, 1001))
+ids = list(range(start, start+1000))
 
-for i in range(340):
+# The amount of loops is arbitrary to cover all the ids on BoardGameGeek
+for i in range(420):
 
     if i != 0:
         for j in range(len(ids)):
@@ -14,14 +17,16 @@ for i in range(340):
     URL = "https://boardgamegeek.com/xmlapi2/thing?type=boardgame&stats=1&id=" + ','.join(map(str, ids))
 
     while(True):
-        r = requests.get(url = URL)
+        filename = "temp" + str(i) + ".xml"
+        if os.path.isfile(filename):
+            r = requests.get(url = URL)
 
-        tempf = open("temp.xml", 'w', encoding='utf8')
-        tempf.write(r.text)
-        tempf.close()
+            tempf = open(filename, 'w', encoding='utf8')
+            tempf.write(r.text)
+            tempf.close()
 
         try: #Failure is possible, and we don't want a crash when it does.
-            root = ET.parse('temp.xml').getroot()
+            root = ET.parse(filename).getroot()
             if i == 0: #Create the main tree for the first iteration
                 permroot = root
             else: #Append to the main tree for all others.
